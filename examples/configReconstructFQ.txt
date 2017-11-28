@@ -1,0 +1,1 @@
+B3	/share/projects/Arora/Syphilis/RAW_Data/ALL/B3/SRR2996728_R1_L001.fastq.gz	/share/projects/Arora/Syphilis/RAW_Data/ALL/B3/SRR2996728_R2_L001.fastq.gz

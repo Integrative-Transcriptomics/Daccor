@@ -1,0 +1,1 @@
+SRR3584843	data/SRR3584843_R1.fastq.gz	data/SRR3584843_R2.fastq.gz

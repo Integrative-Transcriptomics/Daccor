@@ -1,0 +1,2 @@
+B3	/share/home/seitza/Programming/Java/Daccor/20170516-151419rep_tmp/B3/tmp_reconstruction/EagerTmp_0_0_NC_021490.2_pos_[232982]_length_3683_margin_200_.fasta
+B3	/share/home/seitza/Programming/Java/Daccor/20170516-151419rep_tmp/B3/tmp_reconstruction/EagerTmp_1_0_NC_021490.2_pos_[281427]_length_3683_margin_200_.fasta
