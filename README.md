@@ -18,8 +18,8 @@ examples are provided in the examples folder
 ## Tools
 The following tools are available:
 
-### analyze
-analyze a given reference genome and output the repetitive regions
+### identify
+identify the repetitive regions in a given reference genome
 #### Parameters:
 - -g,--gff <arg>           Path of GFF file
 - -h,--help                Prints options
