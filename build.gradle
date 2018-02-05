@@ -72,9 +72,9 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     from sourceSets.main.allSource
 }
 
-artifacts {
-    archives sourcesJar //, javadocJar
-}
+//artifacts {
+//    archives // sourcesJar //, javadocJar
+//}
 
 processResources {
 	filesMatching('version.properties'){
