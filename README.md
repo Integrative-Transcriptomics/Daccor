@@ -6,11 +6,12 @@
 - EAGER for the <pre<code>reconstruct</code></pre> subprogram (DOI: 10.1186/s13059-016-0918-z)
 
 ## generating the jar file
+A precombiled jar can be found in the folder "precombiledJar"
 This program can be built with gradle (https://gradle.org). for that just type
 
 `gradle build`
 
-The jar-files are then contained in the build/libs folder
+The jar-files are then contained in the build/libs folder. Additionally the jar file in the "precombiledJar" folder will be replaced with the newly built jar.
 
 ## examples
 examples are provided in the examples folder
