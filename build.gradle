@@ -3,7 +3,7 @@ plugins {
 }
 
 import org.apache.tools.ant.filters.*
-version '0.0.1'
+version '1.0.0'
 
 project.ext{
 	title = "DACCOR"
@@ -67,14 +67,18 @@ jar {
     }
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+clean.doFirst {
+	delete "${rootDir}/precompiledJar/"
 }
 
-//artifacts {
-//    archives // sourcesJar //, javadocJar
-//}
+task copyJarToBin(type: Copy) {
+	mkdir 'precompiledJar'
+	def jarName = "build/libs/" + title + "-" + version + ".jar"
+    from jarName
+    into "precompiledJar"
+}
+
+build.finalizedBy(copyJarToBin)
 
 processResources {
 	filesMatching('version.properties'){
@@ -92,39 +96,3 @@ eclipse.classpath.file {
         node.appendNode( 'classpathentry', [ kind: 'con', path: 'org.eclipse.jst.j2ee.internal.web.container', exported: 'true'])
     }
 }
-
-/*
-publishing {
-    publications {
-        MyPublication(MavenPublication) {
-            from components.java
-            groupId 'com.uni-tuebingen.de.it.madam'
-            artifactId 'MADAM'
-        }
-    }
-}
-*/
-
-/*
-bintray {
-    user = binUser
-    key = binKey
-    publications = ['MyPublication']
-    publish = true
-    override = true
-    pkg {
-        repo = 'MADAM'
-        name = 'MADAM'
-        licenses = ['GPL-3.0']
-        vcsUrl = "https://github.com/Integrative-Transcriptomics/MADAM"
-        version {
-            name = project.version
-            desc = 'The MADAM pipeline'
-            released  = new Date()
-            vcsTag = project.version
-            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
-        }
-
-    }
-}
-*/

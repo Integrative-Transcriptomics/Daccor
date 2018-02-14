@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'Daccor'
+rootProject.name = 'DACCOR'
