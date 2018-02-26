@@ -68,14 +68,14 @@ jar {
 }
 
 clean.doFirst {
-	delete "${rootDir}/precompiledJar/"
+	delete "${rootDir}/Releases/"
 }
 
 task copyJarToBin(type: Copy) {
-	mkdir 'precompiledJar'
+	mkdir 'Releases'
 	def jarName = "build/libs/" + title + "-" + version + ".jar"
     from jarName
-    into "precompiledJar"
+    into "Releases"
 }
 
 build.finalizedBy(copyJarToBin)
