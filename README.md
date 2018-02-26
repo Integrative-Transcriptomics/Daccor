@@ -4,7 +4,7 @@
 
 - jdk7+
 - gradle
-- EAGER for the <pre<code>reconstruct</code></pre> subprogram (DOI: 10.1186/s13059-016-0918-z)
+- EAGER for the <pre><code>reconstruct</code></pre> subprogram (DOI: 10.1186/s13059-016-0918-z)
 
 ## generating the jar file
 A precombiled jar file can be found in the folder "Releases"  
