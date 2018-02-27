@@ -2,7 +2,7 @@
 
 ## Dependencies:
 
-- jdk7+
+- jdk7
 - gradle
 - EAGER for the <code>reconstruct</code> subprogram (DOI: 10.1186/s13059-016-0918-z)
 
