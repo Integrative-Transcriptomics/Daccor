@@ -7,7 +7,7 @@
 - EAGER for the <code>reconstruct</code> subprogram (DOI: 10.1186/s13059-016-0918-z)
 
 ## generating the jar file
-A precombiled jar file can be found in the folder "Releases"  
+A precompiled jar file can be found in the folder "Releases"  
 This program can be built with gradle (https://gradle.org). for that just type
 
 `gradle build`
