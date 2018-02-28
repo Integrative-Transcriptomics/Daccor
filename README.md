@@ -12,7 +12,7 @@ This program can be built with gradle (https://gradle.org). for that just type
 
 `gradle build`
 
-The jar-files are then contained in the build/libs folder. Additionally the jar file in the "Releases" folder will be replaced with the newly built jar.
+The jar-files are then contained in the build/libs folder. Additionally, the jar file in the "Releases" folder will be replaced with the newly built jar.
 
 ## examples
 examples are provided in the examples folder
