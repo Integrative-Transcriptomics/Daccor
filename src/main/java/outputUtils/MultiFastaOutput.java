@@ -52,7 +52,8 @@ public class MultiFastaOutput {
 						String marginBefore = this.runner.getSequence(name, startIndex-this.margin, startIndex);
 						String marginAfter = this.runner.getSequence(name, startIndex+sequences[i].length(), startIndex+sequences[i].length()+this.margin);
 						String sequence = marginBefore+sequences[i]+marginAfter;
-						String header = headerCont + "[" + startIndex + "]_length_"+sequence.length()+"_margin_"+this.margin+"_\n";
+//						String header = headerCont + "[" + startIndex + "]_length_"+sequence.length()+"_margin_"+this.margin+"_\n";
+						String header = headerCont + startIndex + "_length_"+sequence.length()+"_margin_"+this.margin+"_\n";
 						this.outputSeparatelyWithMargin.put(header,sequence);
 					}
 					String belongsTo = Utilities.findBelongingSequenceName(offsets, startIndex);
