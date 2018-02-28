@@ -38,6 +38,7 @@ identify the repetitive regions in a given reference genome
 
 ### reconstruct
 reconstruct the genome and the given regions for each given sample with EAGER automatically
+#### Parameters:
 - -e,--eager <arg>     config file for reconstructed samples already reconstructed with EAGER
 - -f,--fastqs <arg>    config file for fastq files, REQUIRED
 - -h,--help            Prints options
