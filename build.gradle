@@ -6,7 +6,7 @@ import org.apache.tools.ant.filters.*
 version '1.0.0'
 
 project.ext{
-	title = "DACCOR"
+	title = "Daccor"
 }
 
 allprojects {
