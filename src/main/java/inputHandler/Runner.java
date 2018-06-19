@@ -36,6 +36,7 @@ public class Runner {
 
 	private final String INPUTFILENAME;
 	private final String OUTPUTFILENAME;
+
 	private final String GFFFILENAME;
 	private final Integer WINDOWSIZE;
 	private final Integer NUMBERMISMATCHES;
@@ -361,6 +362,13 @@ public class Runner {
 			System.out.println(this.separateOutputFiles.keySet());
 		}
 		return result;
+	}
+	
+	/**
+	 * @return the oUTPUTFILENAME
+	 */
+	public String getOUTPUTFILENAME() {
+		return OUTPUTFILENAME;
 	}
 
 }

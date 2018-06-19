@@ -126,7 +126,7 @@ public class CommandLineInterface {
 			for(String ref: references){
 				System.out.println("starting to reconstruct "+ref);
 				ReconstructSequences rs = new ReconstructSequences(repeatFiles.get(ref),inputFileName, fastqsConfigFile, eagerReferenceFolder);
-				new CombineReconstructions(rs.getGenomeReconstruction(), rs.getRepeatReconstructions());
+				new CombineReconstructions(rs.getGenomeReconstruction(), rs.getRepeatReconstructions(), this.outputFolder);
 			}
 		}
 		
@@ -646,6 +646,7 @@ public class CommandLineInterface {
 			if(commandLine.hasOption("f")){
 				fastqsConfigFile = commandLine.getOptionValue("f");
 			}
+			this.outputFolder = new File(new File(outputFileName).getAbsolutePath()).getParent();
 		}catch(ParseException e){
 			printPipelineHelp();
 			System.err.println(e.getMessage());

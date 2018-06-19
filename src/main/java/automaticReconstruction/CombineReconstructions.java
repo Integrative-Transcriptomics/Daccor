@@ -26,14 +26,14 @@ public class CombineReconstructions {
 
 	private Map<String, File> genomeReconstructions;
 	private Map<String, List<File>> repeatReconstructions;
-//	private String outputFolder = "";
+	private String outputFolder = "";
 	private String genomeConfig = "";
 	private String repeatConfig = "";
 
-	public CombineReconstructions(Map<String, File> genomeReconstructions, Map<String, List<File>> repeatReconstructions){
+	public CombineReconstructions(Map<String, File> genomeReconstructions, Map<String, List<File>> repeatReconstructions, String outputFolder){
 		this.genomeReconstructions = genomeReconstructions;
 		this.repeatReconstructions = repeatReconstructions;
-//		this.outputFolder = outputFolder;
+		this.outputFolder = outputFolder;
 		reconstruct();
 	}
 
@@ -45,7 +45,8 @@ public class CombineReconstructions {
 	public CombineReconstructions(String reconstructedGenomes, String reconstructedRepeats, String outputFolder) {
 		this.genomeConfig = reconstructedGenomes;
 		this.repeatConfig = reconstructedRepeats;
-//		this.outputFolder = outputFolder;
+		this.outputFolder = outputFolder;
+		new File(this.outputFolder).mkdirs();
 		parseReconstructedGenomes();
 		parseReconstructedRepeats();
 		reconstruct();
@@ -91,7 +92,6 @@ public class CombineReconstructions {
 	private void parseReconstructedGenomes() {
 		this.genomeReconstructions = new HashMap<String, File>();
 		int numGenomes = 0;
-		System.out.println(this.genomeConfig);
 		if(new File(this.genomeConfig).exists()){
 			try {
 				@SuppressWarnings("resource")
@@ -191,7 +191,8 @@ public class CombineReconstructions {
 	private void writeNewGenomeToFile(String sample, StringBuilder genomeSequence, Set<Integer> reconstructed, Set<Integer> notReconstructed) {
 		String outputGenomeFilename = sample+".fasta";
 		if(this.genomeReconstructions.containsKey(sample)){
-			outputGenomeFilename=this.genomeReconstructions.get(sample).getParent()+"/"+sample+".fasta";
+//			outputGenomeFilename=this.genomeReconstructions.get(sample).getParent()+"/"+sample+".fasta";
+			outputGenomeFilename=this.outputFolder+"/"+sample+".fasta";
 		}
 		String outputReconstructedFile = outputGenomeFilename+"_reconstructed.txt";
 		String outputNotReconstructedFile = outputGenomeFilename+"_not_reconstructed.txt";

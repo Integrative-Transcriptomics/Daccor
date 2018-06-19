@@ -42,7 +42,8 @@ public class MultiFastaWriter {
 		String currentDate = sdf.format(cal.getTime());
 		// create the output folder
 		String outFolder = new File(new File(filename).getAbsolutePath()).getParent();
-		File tmpOutFolder = new File(outFolder+"/"+currentDate+"rep_sep_output");
+		String[] splitted_output = this.runner.getOUTPUTFILENAME().split("/");
+		File tmpOutFolder = new File(outFolder+"/"+currentDate+"rep_sep_output_"+splitted_output[splitted_output.length-1]);
 		this.runner.setFolderWithSeparateRepeats(tmpOutFolder.getAbsolutePath());
 		tmpOutFolder.mkdirs();
 		// write the sequences to the files
