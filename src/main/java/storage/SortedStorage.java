@@ -50,7 +50,7 @@ public class SortedStorage extends Storage<TreeSet<Integer>> {
 			sortedMap.put(repeats[i], sortedIndices);
 		}
 		
-		//Sort all entries by the smallest startindices
+		//Sort all entries by the smallest start indices
 		List<Map.Entry<String,TreeSet<Integer>>> list = new LinkedList<Map.Entry<String,TreeSet<Integer>>>(sortedMap.entrySet());
 		Collections.sort(list,new Comparator<Map.Entry<String, TreeSet<Integer>>>(){
 			public int compare(Map.Entry<String, TreeSet<Integer>> o1,

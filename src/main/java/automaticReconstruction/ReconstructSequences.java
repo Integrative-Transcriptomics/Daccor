@@ -100,7 +100,6 @@ private void parseReferenceEagerRunsConfig() {
 			BufferedReader br = new BufferedReader(new FileReader(new File(this.referenceEagerConfig)));
 			String currLine = "";
 			while((currLine=br.readLine())!= null){
-				System.out.println(currLine);
 				String[] splitted = currLine.split("\t");
 				if(splitted.length==2 && new File(splitted[1].trim()).exists()){
 					this.genomeReconstructions.put(splitted[0],new File(splitted[1]));

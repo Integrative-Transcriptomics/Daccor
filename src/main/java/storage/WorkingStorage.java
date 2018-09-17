@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Friederike Hanssen 
@@ -19,8 +20,8 @@ public class WorkingStorage extends Storage<HashSet<Integer>> {
 	// Constructor
 	public WorkingStorage() {
 		super();
-		this.mapRepeats = new HashMap<String, HashSet<Integer>>();
-		this.mapIndex = new HashMap<Integer, Set<String>>();
+		this.mapRepeats = new ConcurrentHashMap<String, HashSet<Integer>>();
+		this.mapIndex = new ConcurrentHashMap<Integer, Set<String>>();
 	}
 
 	//Copy Constructor
@@ -36,7 +37,7 @@ public class WorkingStorage extends Storage<HashSet<Integer>> {
 	private void copyMapRepeats(Map<String, HashSet<Integer>> copyMapRepeats) {
 		String[] repeats = copyMapRepeats.keySet().toArray(new String[copyMapRepeats.keySet().size()]);
 		for(int i = 0; i < repeats.length;i++){
-			HashSet<Integer> temp = new HashSet<Integer>();
+			HashSet<Integer> temp = new HashSet<Integer>(copyMapRepeats.get(repeats[i]).size());
 			for(Integer k : copyMapRepeats.get(repeats[i])){
 				temp.add(k);
 			}
@@ -47,7 +48,7 @@ public class WorkingStorage extends Storage<HashSet<Integer>> {
 	private void copyMapIndex(Map<Integer, Set<String>> copyMapIndex) {
 		Integer[] startIndices = copyMapIndex.keySet().toArray(new Integer[copyMapIndex.keySet().size()]);
 		for(int i = 0; i < startIndices.length;i++){
-			HashSet<String> temp = new HashSet<String>();
+			HashSet<String> temp = new HashSet<String>(copyMapIndex.get(startIndices[i]).size());
 			for(String k : copyMapIndex.get(startIndices[i])){
 				temp.add(k);
 			}
