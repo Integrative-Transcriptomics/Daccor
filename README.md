@@ -14,6 +14,14 @@ This program can be built with gradle (https://gradle.org). for that just type
 
 The jar-files are then contained in the build/libs folder. Additionally, the jar file in the "Releases" folder will be replaced with the newly built jar.
 
+## Possile errors
+
+If you get an empty output and no error messages, the problem might lie in an out-of memory exception that is caught and hidden within the java environment.
+
+If so, please first try to run it with more memory like
+
+<code>java -Xmx8G -jar ...</code>
+
 ## examples
 examples are provided in the examples folder
 
